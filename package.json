@@ -1,0 +1,21 @@
+{
+  "name": "react-netflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "create-vite": "^5.1.0"
+  }
+}
