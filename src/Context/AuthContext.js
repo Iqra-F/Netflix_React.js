@@ -10,7 +10,7 @@ import { setDoc, doc } from "firebase/firestore";
 
 //Note: whenever we have a new user signup, we want it to be stored inside our cloud fireStore.
 //We wanna initialize an empty array, and then if we add a new movie, it will be automatically added into
-//this empty array, but by default it will be empty array.
+//this empty array, but by default it will be an empty array.
 
 const AuthContext = createContext();
 
@@ -26,8 +26,8 @@ export function AuthContextProvider({ children }) {
 
       savedMovies: [], //We wanna initialize an empty array, and then if we add a new movie,
       //it will be automatically added into
-      //this empty array, but by default it will be empty array.
-      // a new empty array will initialize whenever this signup fuction will run, i.e whenever a person will signup
+      //this empty array, but by default it will be an empty array.
+      // a new empty array will initialize whenever this signup fuction runs, i.e whenever a person will signup
 
     });
   }
@@ -41,7 +41,7 @@ export function AuthContextProvider({ children }) {
 
 
   useEffect(() => {
-      // check on component mount whether user is logged in or not?
+      // check on component mount whether the user is logged in or not.
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
