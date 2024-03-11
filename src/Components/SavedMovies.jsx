@@ -29,15 +29,15 @@ const SavedMovies = () => {
 
   const movieRef = doc(db, "users", `${user?.email}`);
   const deleteMovie = async (passedID) => {  // whenever we delete an object from an array in firebase, we can't delete it on server side, we have to do it on the client side,
-    // we have to remove it from our state on the client side  and then push it back to firebase, 
-    //the updated array without id.that's why we are passing id here when we click this delete btn.
+    // we have to remove it from our state on the client side  and then push it back to Firebase, 
+    //the updated array without id. that's why we are passing ID here when we click this delete btn.
     try {
      
       const result = movies.filter((item) => item.id !== passedID);
-      //in result variable. we are creating a new arary through filter, the new array will contain 
-      //all items whose id is not the id that we have passed in delete function in order to delete it.
+      //in the result variable. we are creating a new arary through filter, the new array will contain 
+      //all items whose id is not the id we have passed in the delete function to delete it.
       await updateDoc(movieRef, {
-        SavedMovies: result,//through filter we have removed the movies that we want to delete, then the rest of movies are saved in result and 
+        SavedMovies: result,//through the filter we have removed the movies that we want to delete, then the rest of the movies are saved in the result and 
         //here we're pushing these movies back to our firebase array(in savedMovies)
       });
     } catch (error) {
