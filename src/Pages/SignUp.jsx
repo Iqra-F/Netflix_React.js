@@ -11,8 +11,6 @@ const SignUp = () => {
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
-    //we don't want our page to be submitted everytime when we submit aou form,
-    // we will preventdefault and that is why we will pass an event e
     e.preventDefault();
     try {
       await signUp(email, password);
@@ -25,13 +23,13 @@ const SignUp = () => {
   return (
     <>
       <div className="w-full h-screen">
-        {/* background image, this image will be hidden in phones i.e below small screen */}
+       
         <img
           className="hidden sm:block w-full h-full object-cover"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
           alt=""
         />
-        {/* on phones there will be a black background */}
+      
         <div className="bg-black/60 fixed top-0 left-0 h-screen w-full"></div>
         <div className="fixed w-full px-4 py-24 z-50">
           {/* form */}
