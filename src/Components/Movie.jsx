@@ -6,7 +6,7 @@ import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 
 const Movie = ({item}) => {
     const [like, setLike] = useState(false);
-    const [saved, setSaved] = useState(false)// if u hit the Love icon movie will be saved
+    const [saved, setSaved] = useState(false)
     const user = UserAuth()
 
     // creating a movie ID reference
@@ -19,7 +19,7 @@ const Movie = ({item}) => {
           setSaved(true)
           await updateDoc(movieID,{ 
             saveMovies: arrayUnion({//we use array union to update a document in firebase
-               id: item.id,   //each movie have a unique id, in order to save or delete something in firebase,it has to have an id
+               id: item.id,   //each movie has a unique ID, to save or delete something in Firebase, it has to have an ID
                title: item.title,
                img: item.backdrop_path
           
